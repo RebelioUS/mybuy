@@ -22,5 +22,5 @@
 //= require 'vanila/custom'
 // Placeholder
 //= require 'vanila/jquery.powerful-placeholder.min'
-//= require_tree .
+// require_tree .
 
