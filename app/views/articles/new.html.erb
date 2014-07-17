@@ -1,2 +1,46 @@
 <h1>Articles#new</h1>
-<p>Find me in app/views/articles/new.html.erb</p>
+<div class="row">
+  <div class="col-sm-5 col-sm-offset-1">
+    <h6 class="foo">Article form</h6>
+
+    <!-- Contact form -->
+    <div class="add-comment styled boxed boxed-cream" id="addcomments">
+      <div class="add-comment-title gradient"><h3>Write a article</h3></div>
+      <div class="comment-form">
+        <%= form_for @article, {:id => 'commentForm', :class => 'ajax_form'} do |f| %>
+          <div class="form-inner">
+            <div class="field_select">
+              <label for="contact_name" class="label_title">Name:</label>
+              <select name="contact_name" id="contact_name" multiple data-placeholder="Your Selection">
+                <option value='example1@gmail.com'>Mike Charley</option>
+                <option value='example2@gmail.com'>Andy Lurs</option>
+                <option value='example3@gmail.com'>Toby Lightman</option>
+                <option value='example4@gmail.com'>Lene Marlin</option>
+                <option value='example5@gmail.com'>Deep Purple</option>
+              </select>
+            </div>
+            <div class="field_text">
+              <%= f.label :title, :class => 'lable_title', :for => 'title' %>
+              <%= f.text_field :title, :id => 'title', :class => 'inputtext input_middle required', :for => 'title' %>
+            </div>
+            <div class="clear"></div>
+            <div class="field_text field_textarea">
+              <div id="edit_buttons" class="edit_buttons gradient"></div>
+              <%= f.label :content, :class => 'lable_title', :for => 'content' %>
+              <%= f.text_area :content, :cols => 30, :rows => 10, :id => 'styled_message', :class => 'textarea textarea_middle', :for => 'content' %>
+            </div>
+            <div class="clear"></div>
+          </div>
+
+          <div class="rowSubmit">
+            <a onclick="document.getElementById('commentForm').reset();return false" href="#" class="link-reset btn btn-white"><span>Discard</span></a>
+            <span class="btn"><input type="submit" id="send" value="Send" /></span>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <!--/ Contact form -->
+  </div>
+
+
+
