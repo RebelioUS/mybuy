@@ -1,2 +1,30 @@
-<h1>Articles#show</h1>
-<p>Find me in app/views/articles/show.html.erb</p>
+<main>
+  <section>
+    <header>
+      <h1><%= @article.title %></h1>
+    </header>
+    <article>
+      <%= @article.content.html_safe %>
+    </article>
+  </section>
+
+  <div>
+    <%= link_to article_path(@article), :class => "btn btn-white" do %>
+      <span>Show</span>
+    <% end %>
+    <%= link_to(raw("<span>Edit</span>"), edit_article_path(@article),
+                { :class => 'btn btn-white' })
+    %>
+    <%= link_to '', article_path(@article), :method => 'delete',
+                :class                              => 'btn btn-mini btn-close',
+                data:                               { confirm: 'Are you shure?' }
+    %>
+  </div>
+<hr/>
+  <div>
+    <%= link_to new_article_path, :class => "btn btn-white" do %>
+      <span>Create new article</span>
+    <% end %>
+      <%= link_to raw("<span> Back to all articles </span>"), articles_path, :class => 'btn btn-search btn-green'  %>
+      </div>
+      </main>

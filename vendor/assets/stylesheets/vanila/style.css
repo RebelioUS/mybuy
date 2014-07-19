@@ -1151,8 +1151,7 @@ textarea,
 	-moz-border-radius: 5px;
     border-radius: 5px;
 	padding:0 16px;
-	font-size:17px;
-	*padding:0;
+	/*font-size:17px;*/
 	-moz-box-sizing:border-box;
 	-ms-box-sizing:border-box;
 	-webkit-box-sizing:border-box;

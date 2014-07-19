@@ -1,3 +1,35 @@
 <h1>Articles#index</h1>
-<p>Find me in app/views/articles/index.html.erb</p>
+<% if notice %>
+  <p class="text-success"><%= notice %></p>
+<% end %>
+<% if @articles %>
 <%= link_to  'Create Article', new_article_path %>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Content</th>
+      <th>Buttons</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @articles.each do |a| %>
+    <tr>
+      <td><%= a.title %></td>
+      <td><%= strip_tags(a.content.truncate(240)) %></td>
+      <td>
+
+        <%= link_to article_path(a), :class => "btn btn-white" do %>
+          <span>Show</span>
+        <% end %>
+        <%= link_to(raw("<span>Edit</span>"), edit_article_path(a), { :class => 'btn btn-white'})  %>
+        <%= link_to '', article_path(a), :method => 'delete', :class => 'btn btn-mini btn-close', data: {confirm: 'Are you shure?'}  %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+<% end %>
+
+<%= link_to  'Create Article', new_article_path %>
+

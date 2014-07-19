@@ -1,6 +1,8 @@
 
 // Visual text editor
+
 //= require 'vanila/nicEdit'
+
 
 // NicEdit
 bkLib.onDomLoaded(function() {
